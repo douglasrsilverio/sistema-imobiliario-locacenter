@@ -1,4 +1,4 @@
-package com.example.locacenter.controller.exibir;
+package com.example.locacenter.model.entidades;
 
 public class Casa {
 

@@ -3,12 +3,12 @@ package com.example.locacenter.controller.exibir;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 import com.example.locacenter.R;
 import com.example.locacenter.model.BancoController;
+import com.example.locacenter.model.entidades.Casa;
 
 public class AdicionarCasaForm extends AppCompatActivity {
 

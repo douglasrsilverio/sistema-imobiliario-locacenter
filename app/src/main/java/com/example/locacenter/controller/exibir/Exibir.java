@@ -3,7 +3,6 @@ package com.example.locacenter.controller.exibir;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,14 +12,16 @@ import android.widget.LinearLayout;
 
 import com.example.locacenter.R;
 import com.example.locacenter.model.BancoController;
-import com.example.locacenter.model.DAO;
+import com.example.locacenter.model.entidades.Casa;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Exibir extends AppCompatActivity {
 
-
+    LinearLayout llCasa = findViewById(R.id.llCasas);
+    BancoController bancoController = new BancoController(getBaseContext());
+    List<Casa> casa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,25 +37,24 @@ public class Exibir extends AppCompatActivity {
     }
 
     public void populaBotoesScrollViewCasa(){
-        LinearLayout ll = findViewById(R.id.llCasas);
-        ll.removeAllViews();
-        BancoController bancoController = new BancoController(getBaseContext());
-        List<Casa> casa = new ArrayList<>();
+        llCasa.removeAllViews();
         casa = bancoController.selectTabelaCasa();
 
         int i = 0;
         do {
+            try {
+                String rua = casa.get(i).getRua();
+                int numero = casa.get(i).getNumero();
+                int cep = casa.get(i).getCep();
+                String hidrometro = casa.get(i).getHidrometro();
+                String matricula = casa.get(i).getMatricula();
 
-            String rua = casa.get(i).getRua();
-            int numero = casa.get(i).getNumero();
-            int cep = casa.get(i).getCep();
-            String hidrometro = casa.get(i).getHidrometro();
-            String matricula = casa.get(i).getMatricula();
+                criaBotoesScrollViewCasa(rua, "a");
 
-            criaBotoesScrollViewCasa(rua, "a");
-
-            i++;
-
+                i++;
+            }catch(Exception e){
+                Log.i("teste", "Sem dados para fazer o select." );
+            }
         } while (i < casa.size());
     }
 

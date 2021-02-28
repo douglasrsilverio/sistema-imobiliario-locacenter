@@ -33,7 +33,6 @@ public class DAO extends SQLiteOpenHelper {
         db.execSQL(sqlConfiguracoes);
     }
 
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.d("teste", "onUpgrade");
