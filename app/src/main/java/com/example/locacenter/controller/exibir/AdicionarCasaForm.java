@@ -7,19 +7,17 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.locacenter.R;
-import com.example.locacenter.model.BancoController;
+import com.example.locacenter.model.CidadeDao;
 import com.example.locacenter.model.entidades.Casa;
 
 public class AdicionarCasaForm extends AppCompatActivity {
 
     Casa casa = new Casa();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_adicionar_casa);
-
     }
 
     public void populaObjetoCasa(){
@@ -50,10 +48,9 @@ public class AdicionarCasaForm extends AppCompatActivity {
     }
 
     public void Cadastrar(View v){
-        BancoController bancoController = new BancoController(getBaseContext());
+        CidadeDao cidadeDao = new CidadeDao(getBaseContext());
         populaObjetoCasa();
-        bancoController.insereDado(casa);
-        //bancoController.selectTabelaCasa();
+        cidadeDao.insereDado(casa);
     }
 
 

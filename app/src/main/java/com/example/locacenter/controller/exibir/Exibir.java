@@ -11,16 +11,12 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.locacenter.R;
-import com.example.locacenter.model.BancoController;
+import com.example.locacenter.model.CidadeDao;
 import com.example.locacenter.model.entidades.Casa;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Exibir extends AppCompatActivity {
-
-    LinearLayout llCasa = findViewById(R.id.llCasas);
-    BancoController bancoController = new BancoController(getBaseContext());
     List<Casa> casa;
 
     @Override
@@ -37,8 +33,12 @@ public class Exibir extends AppCompatActivity {
     }
 
     public void populaBotoesScrollViewCasa(){
+        CidadeDao cidadeDao = new CidadeDao(getBaseContext());
+        LinearLayout llCasa = findViewById(R.id.llCasas);
+
+
         llCasa.removeAllViews();
-        casa = bancoController.selectTabelaCasa();
+        casa = cidadeDao.selectTabelaCasa();
 
         int i = 0;
         do {

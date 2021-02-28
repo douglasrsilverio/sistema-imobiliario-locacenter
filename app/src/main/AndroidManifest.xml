@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Locacenter">
-        <activity android:name=".model.BancoController"></activity>
+        <activity android:name=".model.CidadeDao"></activity>
         <activity android:name=".controller.exibir.AddCasaOuInquelino" />
         <activity android:name=".controller.exibir.AdicionarCasaForm" />
         <activity android:name=".controller.exibir.AdicionarInquelinoForm" />

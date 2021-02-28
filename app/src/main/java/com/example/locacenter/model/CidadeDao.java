@@ -12,12 +12,12 @@ import com.example.locacenter.model.entidades.Casa;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BancoController extends AppCompatActivity {
+public class CidadeDao extends AppCompatActivity {
 
     private SQLiteDatabase db;
     private DAO banco;
 
-    public BancoController(Context context){
+    public CidadeDao(Context context){
         banco = new DAO(context);
     }
 
@@ -35,7 +35,6 @@ public class BancoController extends AppCompatActivity {
 
         db.insert("CASA", null, valores);
         db.close();
-
     }
 
     public List<Casa> selectTabelaCasa(){
@@ -54,20 +53,8 @@ public class BancoController extends AppCompatActivity {
                 casa.setHidrometro(cursor.getString(4));
                 casa.setMatricula(cursor.getString(5));
                 listaCasas.add(casa);
-
             }while (cursor.moveToNext());
-
-        } else{
-
         }
-
-        //Log.d("teste", listaCasas.get(0).getRua() + listaCasas.get(0).getNumero() + listaCasas.get(0).getCep() + listaCasas.get(0).getHidrometro() + listaCasas.get(0).getMatricula());
-        //Log.d("teste", listaCasas.get(1).getRua() + listaCasas.get(1).getNumero() + listaCasas.get(1).getCep() + listaCasas.get(1).getHidrometro() + listaCasas.get(1).getMatricula());
-        //Log.d("teste", listaCasas.get(2).getRua() + listaCasas.get(2).getNumero() + listaCasas.get(2).getCep() + listaCasas.get(2).getHidrometro() + listaCasas.get(2).getMatricula());
-
         return listaCasas;
     }
-
-
-
 }
