@@ -141,14 +141,6 @@
                 android:onClick="Cadastrar"
                 android:text="Cadastrar" />
 
-            <Button
-                android:id="@+id/button11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20sp"
-                android:layout_marginLeft="20sp"
-                android:layout_weight="1"
-                android:text="Voltar" />
         </LinearLayout>
 
     </LinearLayout>

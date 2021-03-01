@@ -36,26 +36,23 @@ public class Exibir extends AppCompatActivity {
         CidadeDao cidadeDao = new CidadeDao(getBaseContext());
         LinearLayout llCasa = findViewById(R.id.llCasas);
 
-
         llCasa.removeAllViews();
         casa = cidadeDao.selectTabelaCasa();
 
-        int i = 0;
-        do {
+        for(Casa casa: casa) {
             try {
-                String rua = casa.get(i).getRua();
-                int numero = casa.get(i).getNumero();
-                int cep = casa.get(i).getCep();
-                String hidrometro = casa.get(i).getHidrometro();
-                String matricula = casa.get(i).getMatricula();
+                String rua = casa.getRua();
+                int numero = casa.getNumero();
+                int cep = casa.getCep();
+                String hidrometro = casa.getHidrometro();
+                String matricula = casa.getMatricula();
 
                 criaBotoesScrollViewCasa(rua, "a");
 
-                i++;
-            }catch(Exception e){
-                Log.i("teste", "Sem dados para fazer o select." );
+            } catch (Exception e) {
+                Log.i("teste", "Sem dados para fazer o select.");
             }
-        } while (i < casa.size());
+        }
     }
 
     public void adicionar(View v){
@@ -69,7 +66,7 @@ public class Exibir extends AppCompatActivity {
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("teste", "OK!!!");
+
             }
         });
 

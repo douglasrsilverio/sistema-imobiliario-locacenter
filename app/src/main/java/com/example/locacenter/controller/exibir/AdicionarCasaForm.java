@@ -2,6 +2,7 @@ package com.example.locacenter.controller.exibir;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -52,6 +53,4 @@ public class AdicionarCasaForm extends AppCompatActivity {
         populaObjetoCasa();
         cidadeDao.insereDado(casa);
     }
-
-
 }

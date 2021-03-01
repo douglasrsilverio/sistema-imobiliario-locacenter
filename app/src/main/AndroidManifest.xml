@@ -14,7 +14,7 @@
         <activity android:name=".controller.exibir.AdicionarCasaForm" />
         <activity android:name=".controller.exibir.AdicionarInquelinoForm" />
         <activity android:name=".controller.exibir.Exibir" />
-        <activity android:name=".controller.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

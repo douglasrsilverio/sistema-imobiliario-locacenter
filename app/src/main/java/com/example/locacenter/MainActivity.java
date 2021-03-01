@@ -1,4 +1,4 @@
-package com.example.locacenter.controller;
+package com.example.locacenter;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,12 +1,9 @@
 package com.example.locacenter.model;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
-import com.example.locacenter.controller.MainActivity;
 
 public class DAO extends SQLiteOpenHelper {
 
